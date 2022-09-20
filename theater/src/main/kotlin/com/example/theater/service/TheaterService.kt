@@ -11,12 +11,12 @@ class TheaterService {
 
     constructor() {
 
-        fun getPrice(row: Int, num: Int) : BigDecimal {
+        fun getPrice(row: Int, num: Int) : Double {
             return when {
-                row >=14 -> BigDecimal(14.50)
-                num <=3 || num >= 34 -> BigDecimal(16.50)
-                row == 1 -> BigDecimal(21)
-                else -> BigDecimal(18)
+                row >=14 -> 14.50
+                num <=3 || num >= 34 -> 16.50
+                row == 1 -> 21.0
+                else -> 18.0
             }
 
         }
@@ -44,7 +44,7 @@ class TheaterService {
     get() = hiddenSeats.toList()
 
     fun find(num: Int, row: Char): Seat{
-        return seats.filter { it.row == row && it.num == num }.first()
+        return seats.filter { it.rowSeat == row && it.numSeat == num }.first()
     }
 
 }

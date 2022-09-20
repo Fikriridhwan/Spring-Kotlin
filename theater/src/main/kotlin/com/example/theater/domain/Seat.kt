@@ -1,17 +1,15 @@
 package com.example.theater.domain
 
 import java.math.BigDecimal
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity
-data class Seat(@Id @GeneratedValue(strategy = GenerationType.AUTO)
-                val id: Long,
-                val row: Char,
-                val num: Int,
-                val price: BigDecimal,
+@Table(name = "seats")
+data class Seat(@Id
+                val idSeat: Long,
+                val rowSeat: Char,
+                val numSeat: Int,
+                val priceSeat: Double,
                 val description: String) {
-    override fun toString(): String = "Seat $row-$num $$price ($description)"
+    override fun toString(): String = "Seat $rowSeat-$numSeat $priceSeat ($description)"
 }

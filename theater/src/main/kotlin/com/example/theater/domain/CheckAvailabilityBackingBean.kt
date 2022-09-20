@@ -1,10 +1,12 @@
 package com.example.theater.domain
 
 class CheckAvailabilityBackingBean {
-    val seatNums = 1..36
-    val seatRows = 'A'..'O'
     var selectedSeatNum: Int = 1
     var selectedSeatRow: Char = 'A'
-    var result: String = ""
-
+    var selectedPerformance: Long? = null
+    var customerName: String = ""
+    var available: Boolean? = null
+    var seat: Seat? = null
+    var performance: Performance? = null
+    var booking: Booking? = null
 }
